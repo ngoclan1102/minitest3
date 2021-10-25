@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Enter a number:<label><input type="text" id="number"></label>
+<label><button onclick="show()">Show</button></label>
+<p id="num"></p>
+<script>
+    function show() {
+        let a = +document.getElementById('number').value;
+        let count = 0;
+        let i = 2;
+        while (count<a) {
+
+            let check = true;
+            if (i < 2) {
+                continue;
+            } else {
+                for (let j = 2; j < i - 1; j++) {
+                    if (i % j === 0) {
+                        check = false;
+                        break;
+                    }
+                }
+            }
+            if (check) {
+                count++
+                document.write(i + "&nbsp")
+            }
+
+            i++
+
+        }
+    }
+</script>
+</body>
+</html>
